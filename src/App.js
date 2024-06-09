@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import AddCoropatient from './components/AddCoropatient';
+import SearchCoropatient from './components/SearchCoropatient';
+import DeleteCoropatient from './components/DeleteCoropatient';
+import ViewCoropatient from './components/ViewCoropatient';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AddCoropatient/>}/>
+      <Route path='/search' element={<SearchCoropatient/>}/>
+      <Route path='/delete' element={<DeleteCoropatient/>}/>
+      <Route path='/view' element={<ViewCoropatient/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
